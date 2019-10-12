@@ -1,0 +1,126 @@
+@url = http://localhost:8000
+
+//Untuk Users
+GET {{url}}/api/bookshelf HTTP/1.1
+
+###
+GET {{url}}/api/transaction HTTP/1.1
+
+###
+GET {{url}}/api/category HTTP/1.1
+
+###
+POST {{url}}/api/users/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "email" : "admin@dangdut.com",
+    "username" : "qwerqwer",
+    "password" : "qwerqwer",
+    "avatar": "qwerqwer",
+    "role": "operator"
+}
+
+###
+POST {{url}}/api/category/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "ekonomi"
+}
+
+###
+POST {{url}}/api/bookshelf/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "bookshelf_code": "X2"
+}
+
+###
+POST {{url}}/api/book/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "isbn": 19912312,
+    "title": "Halo halo-bandung",
+    "author": "si akang",
+    "category_id": 2,
+    "bookshelf_id": 1,
+    "publisher": "mps"
+}
+
+###
+POST {{url}}/api/transaction HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Muhammad Yusup",
+    "nis": 11333,
+    "book_id": 1,
+    "status": "Dipinjam"
+}
+
+###
+POST {{url}}/api/guest_book HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Someone",
+    "nis": 11300,
+    "purpose": "nyantai aja dulu"
+}
+
+###
+PUT {{url}}/api/users/update HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 3,
+    "email": "hello44@email.com",
+    "username": "asdasd",
+    "password": "asdasd",
+    "avatar": "afk",
+    "role": "administateur"
+}
+
+###
+PUT {{url}}/api/category/update HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 3,
+    "name": "Hukum"
+}
+
+###
+PUT {{url}}/api/bookshelf/update HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 6,
+    "bookshelf_code": "A4"
+}
+
+###
+PUT {{url}}/api/book/update HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "isbn": 19912312,
+    "title": "entah apa yang merasuki",
+    "author": "si gagak",
+    "category_id": 2,
+    "bookshelf_id": 2,
+    "publisher": "mpx"
+}
+
+###
+DELETE {{url}}/api/users/delete/10 HTTP/1.1
+
+###
+DELETE {{url}}/api/category/delete/7 HTTP/1.1
+
+###
+DELETE {{url}}/api/book/delete/2
